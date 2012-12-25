@@ -18,7 +18,7 @@ class mysql {
     }
     exec {
         "mysql_password" :
-	    unless => "mysqladmin -uroot -proot_status",
+	    unless => "mysqladmin -uroot -proot status",
 	    command => "mysqladmin -uroot password root",
 	    require => Service[mysql] ;
 
