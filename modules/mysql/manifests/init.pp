@@ -23,7 +23,7 @@ class mysql {
 	    require => Service[mysql] ;
 
         "massiveapp_db" :
-	    unless => "mysqladmin -uroot -proot massiveapp_production",
+	    unless => "mysql -uroot -proot massiveapp_production",
 	    command => "mysql -uroot -proot -e 'create database massiveapp_production'",
 	    require => Exec["mysql_password"]
 	    
